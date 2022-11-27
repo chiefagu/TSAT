@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IdentityRole
+
+
+@{
+	var title = "Create Role";
+	Layout = "_DashboardLayout";
+}
+
+<section class="section">
+      <div class="row">
+        <div class="col-lg-8">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">@title</h5>
+
+              <!-- General Form Elements -->
+              <form asp-action="Upsert" asp-controller="Roles" method="post">
+                <div class="row mb-3">
+                  <label asp-for="Id" class="col-sm-4 col-form-label"></label>
+                  <div class="col-sm-8">
+                      @if(Model != null && !String.IsNullOrEmpty(Model.Id)) {
+                          <input asp-for="@Model.Id" class="form-control" hidden>
+                      }
+                    <input asp-for="Id" readonly class="form-control">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label asp-for="Name" class="col-sm-4 col-form-label"></label>
+                  <div class="col-sm-8">
+                    <input asp-for="Name" class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                  </div>
+                </div>
+                <div class="row mb-3 offset-4">
+              
+                  <div class="col-sm-8">
+                    @if (Model != null && !String.IsNullOrEmpty(Model.Id))
+                    {
+                        // update
+                        <input type="submit" class="btn btn-info w-100" value="Update">
+                    } else {
+                        // create
+                        <input type="submit" class="btn btn-info w-100" value="Create">
+                    }
+                  </div>
+                </div>
+                
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+
+       
+      </div>
+    </section>
+

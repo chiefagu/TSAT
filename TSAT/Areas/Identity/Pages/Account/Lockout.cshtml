@@ -1,0 +1,16 @@
+﻿@page
+@model LockoutModel
+@{
+    ViewData["Title"] = "Locked out";
+}
+
+<header class="pt-10">
+    <div class="container">
+        <div class="text-center col-12 col-sm-9 col-lg-7 col-xl-6 mx-auto position-relative z-index-20" style="margin-bottom: 400px">
+            <h1 class="display-3 fw-bold mb-3 text-danger">@ViewData["Title"]</h1>
+            <p class="text-danger lead mb-0">
+                This account has been locked out, please try to Login again later.
+            </p>
+        </div>
+    </div>
+</header>

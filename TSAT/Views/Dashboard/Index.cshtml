@@ -1,0 +1,152 @@
+﻿@{
+	ViewBag.Title = "Dashboard";
+	Layout = "_DashboardLayout";
+}
+<div class="container">
+
+	<div class="pagetitle">
+		<h1>Leaderboard</h1>
+	</div>
+	<!-- End Page Title -->
+
+	<div class="container">
+		<section class="section dashboard">
+			<div class="row">
+
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Island</h5>
+							<!-- Table with hoverable rows -->
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">Routes</th>
+										<th scope="col">Score</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+
+										<td>Through Freedom way</td>
+										<td>10</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<!-- End Table with hoverable rows -->
+
+						</div>
+					</div>
+
+				</div>
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Mainland</h5>
+							<!-- Table with hoverable rows -->
+							<table class="table table-hover">
+								<thead>
+									<tr>
+
+										<th scope="col">Routes</th>
+										<th scope="col">Score</th>
+
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>3rd mainland</td>
+										<td>10</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<!-- End Table with hoverable rows -->
+
+						</div>
+					</div>
+
+				</div>
+				
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Island</h5>
+
+							<!-- Doughnut Chart -->
+							<canvas id="island" style="max-height: 400px; display: block; box-sizing: border-box; height: 399.5px; width: 488px;" width="976" height="799"></canvas>
+							<script>
+								document.addEventListener("DOMContentLoaded", () => {
+									new Chart(document.querySelector('#island'), {
+										type: 'doughnut',
+										data: {
+											labels: [
+												'via Sandfield',
+												'via Freedomway',
+												'via Landmark center'
+											],
+											datasets: [{
+												label: 'Island Dataset',
+												data: [300, 50, 100],
+												backgroundColor: [
+													'rgb(255, 99, 132)',
+													'rgb(54, 162, 235)',
+													'rgb(255, 205, 86)'
+												],
+												hoverOffset: 4
+											}]
+										}
+									});
+								});
+							</script>
+							<!-- End Doughnut CHart -->
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Mainland</h5>
+
+							<!-- Doughnut Chart -->
+							<canvas id="mainland" style="max-height: 400px; display: block; box-sizing: border-box; height: 399.5px; width: 488px;" width="976" height="799"></canvas>
+							<script>
+								document.addEventListener("DOMContentLoaded", () => {
+									new Chart(document.querySelector('#mainland'), {
+										type: 'doughnut',
+										data: {
+											labels: [
+												'3rd-Mainland-Bridge',
+												'Carter-Bridge',
+												'Eko-Bridge'
+											],
+											datasets: [{
+												label: 'My First Dataset',
+												data: [200, 150, 300],
+												backgroundColor: [
+													'rgb(255, 99, 132)',
+													'rgb(54, 162, 235)',
+													'rgb(255, 205, 86)'
+												],
+												hoverOffset: 4
+											}]
+										}
+									});
+								});
+							</script>
+							<!-- End Doughnut CHart -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+
+</div><!-- End #main -->
