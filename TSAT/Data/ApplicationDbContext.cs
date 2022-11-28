@@ -10,5 +10,7 @@ namespace TSAT.Data
             : base(options)
         {
         }
+
+        public DbSet<Survey> Surveys { get; set; } = null!;
     }
 }

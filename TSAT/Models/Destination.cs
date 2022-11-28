@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿namespace TSAT.Models;
 
-namespace TSAT.Models
+public class Destination
 {
-    public class Destination
-    {
-        public string To { get; set; } = null!;
-        public string From { get; set; } = null!;
-
-
-    }
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
 }
+

@@ -1,0 +1,67 @@
+﻿@model Survey
+
+@{
+	Layout = "_DashboardLayout";
+}
+
+<div class="container">
+
+<section class="section">
+      <div class="row">
+        <div class="col-lg-8">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Take Survey</h5>
+
+              <!-- General Form Elements -->
+                        <form method="post" asp-action="Create">
+                
+
+                            <div class="row mb-3">
+                                <label asp-for="Route" class="col-sm-4 col-form-label">What Route did you take today ?</label>
+                                <div class="col-sm-8">
+                                    <select asp-for="Route"
+                                            asp-items="@Model.RouteList"
+                                            class="form-select">
+                                        <option disabled selected>-- Select Route --</option>
+                                    </select>
+                                    <span asp-validation-for="Route"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <label asp-for="Score" class="col-sm-4 col-form-label">How was your trip today ?</label>
+                                <div class="col-sm-8">
+                                    <select asp-for="Score"
+                                            asp-items="@Model.RatingList"
+                                            class="form-select">
+                                        <option disabled selected>-- Select Rating --</option>
+                                    </select>
+                                    <span asp-validation-for="Score"></span>
+                                </div>
+                            </div>
+
+
+
+
+
+                <div class="row mb-3 offset-4">
+              
+                  <div class="col-sm-8">
+                    <button type="submit" class="btn btn-success w-100">Finish</button>
+                  </div>
+                </div>
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+        </div>
+
+       
+      </div>
+    </section>
+</div>
