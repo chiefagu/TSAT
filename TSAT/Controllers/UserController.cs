@@ -18,6 +18,8 @@ public class UserController : Controller
         _userManager = userManager;
     }
 
+
+    [Authorize(Roles = "Admin")]
     public IActionResult Index()
     {
         // retrieve all the users frm the db
@@ -47,6 +49,7 @@ public class UserController : Controller
 
         return View(users);
     }
+
 
     public IActionResult Edit(string userId)
     {

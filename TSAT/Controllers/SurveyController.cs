@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
 using TSAT.Data;
 using TSAT.Models;
@@ -6,6 +7,7 @@ using Route = TSAT.Models.Route;
 
 namespace TSAT.Controllers
 {
+    [Authorize(Roles = "User, Admin")]
     public class SurveyController : Controller
     {
 
