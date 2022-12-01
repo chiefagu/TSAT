@@ -45,33 +45,32 @@ namespace TSAT.Controllers
              };
 
 
-
             var ratings = new List<Rating>()
             {
                 new Rating() {
                     Id = 1,
                     Text = "Smooth",
-                    Score = 5
+                    Score = 20
                 },
                 new Rating() {
-                    Id = 1,
+                    Id = 2,
                     Text = "Slightly Congested",
-                    Score = 4
+                    Score = 80
                 },
                 new Rating() {
-                    Id = 1,
+                    Id = 3,
                     Text = "Congested",
-                    Score = 3
+                    Score = 150
                 },
                 new Rating() {
-                    Id = 1,
+                    Id = 4,
                     Text = "Highly Congested",
-                    Score = 2
+                    Score = 30
                 },
                 new Rating() {
-                    Id = 1,
+                    Id = 5,
                     Text = "Blocked",
-                    Score = 1
+                    Score = 400
                 },
 
             };

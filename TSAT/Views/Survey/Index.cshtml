@@ -1,7 +1,7 @@
 ﻿@model Survey
 
 @{
-	Layout = "_DashboardLayout";
+    Layout = "_DashboardLayout";
 }
 
 <div class="container">
@@ -44,7 +44,13 @@
                             </div>
 
 
-
+                            <div class="row mb-3">
+                                <label asp-for="Comment" class="col-sm-4 col-form-label">Tells us more</label>
+                                <div class="col-sm-8">
+                                    <textarea asp-for="Comment" class="form-control" style="height: 100px"></textarea>
+                                    <span asp-validation-for="Comment"></span>
+                                </div>
+                            </div>
 
 
                 <div class="row mb-3 offset-4">

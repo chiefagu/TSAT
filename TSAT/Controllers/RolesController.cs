@@ -6,7 +6,7 @@ using TSAT.Models;
 
 namespace TSAT.Controllers;
 
-[Authorize]
+[Authorize(Roles = "Admin")]
 public class RolesController : Controller
 {
     private readonly ApplicationDbContext _db;

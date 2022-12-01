@@ -1,0 +1,57 @@
+﻿@model UserClaimsViewModel
+
+
+<div class="pagetitle">
+	<h1>Claims</h1>
+</div>
+<section class="section dashboard">
+	<div class="row">
+		
+		<div class="col-lg-12">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">
+						Manage User Claims
+					</h5>
+					<form>
+						<div class="row mb-3">
+							<legend class="col-form-label col-sm-4 pt-0">Checkboxes</legend>
+							<div class="col-sm-8">
+
+								@for (int i = 0; i < Model.Claims.Count; i++) {
+									<div class="form-check">
+									<input asp-for="@Model.Claims[i].ClaimType" hidden />
+										<input 
+											asp-for="@Model.Claims[i].IsSelected"
+											class="form-check-input" 
+											id="gridCheck1"
+										/>
+
+									<label 
+										asp-for="@Model.Claims[i].ClaimType"
+										class="form-check-label" 
+										for="gridCheck1"
+									>
+											@Model.Claims[i].ClaimType
+										</label>
+									</div>
+
+								}
+								<div asp-validation-summary="All" class="text-danger"></div>
+
+							</div>
+						</div>
+					</form>
+					
+				</div>
+
+				<div class="card-footer">
+					<input type="submit" value="Update" class="btn btn success" />
+					<a asp-action="Index" class="btn btn-warning" ></a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>

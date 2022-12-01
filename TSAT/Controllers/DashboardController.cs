@@ -8,6 +8,10 @@ namespace TSAT.Controllers
     {
         public IActionResult Index()
         {
+            // route
+            // destination
+            // survey data(list<object>)
+
             return View();
         }
     }
